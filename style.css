@@ -8,7 +8,7 @@
         height: 100%;
         z-index: 9999;
         background: transparent;
-        cursor: pointer;
+        pointer-events: none;
       }
       .audio-overlay.hidden {
         display: none;
@@ -483,8 +483,38 @@
       }
 
       @media (max-width: 768px) {
+        header {
+          padding: 15px 0;
+        }
+
+        .logo {
+          font-size: 18px;
+          letter-spacing: 1px;
+        }
+
+        .logo::before {
+          font-size: 9px;
+          letter-spacing: 2px;
+          top: -6px;
+        }
+
         .nav-links {
+          display: flex;
+          gap: 0;
+        }
+
+        .nav-links a {
           display: none;
+        }
+
+        .music-btn {
+          margin-left: 10px;
+          width: 36px;
+          height: 36px;
+        }
+
+        .hero {
+          padding: 130px 0 80px;
         }
 
         .hero-text h2 {
@@ -495,6 +525,24 @@
           font-size: 24px;
         }
 
+        .hero-text p {
+          font-size: 15px;
+          line-height: 1.7;
+        }
+
+        .profile-container {
+          width: min(75vw, 300px);
+          height: min(75vw, 300px);
+        }
+
+        .profile-container:hover .profile-img {
+          transform: translate(-10px, -10px);
+        }
+
+        .profile-container:hover .profile-frame {
+          transform: translate(10px, 10px);
+        }
+
         .section-title {
           font-size: 28px;
         }
@@ -503,6 +551,65 @@
           grid-template-columns: 1fr;
         }
 
+        .project-content {
+          padding: 22px;
+        }
+
+        .project-content h3 {
+          font-size: 20px;
+        }
+
+        .project-links,
+        .modal-links {
+          flex-wrap: wrap;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .skill-item {
+          padding: 20px 10px;
+        }
+
+        .social-links {
+          gap: 15px;
+        }
+
+        .modal-body {
+          padding: 25px 20px;
+        }
+
+        .modal-title {
+          font-size: 25px;
+        }
+
+        .modal-img {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        .logo {
+          font-size: 15px;
+        }
+
+        .hero-text h2 {
+          font-size: 32px;
+        }
+
+        .hero-text h3 {
+          font-size: 21px;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       .animated-text span {

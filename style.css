@@ -519,10 +519,15 @@
 
         .hero {
           min-height: auto;
-          padding: 130px 0 90px;
+          padding: 190px 0 155px;
+        }
+
+        .hero-text {
+          padding-top: 70px;
         }
 
         .hero-text h1 {
+          display: block;
           margin-bottom: 16px;
         }
 
@@ -546,8 +551,8 @@
           width: min(75vw, 300px);
           height: min(75vw, 300px);
           margin-top: 55px;
+          margin-bottom: 70px;
         }
-
 
         .profile-container:hover .profile-img {
           transform: translate(-10px, -10px);
@@ -567,6 +572,22 @@
         .skills,
         .contact {
           padding: 75px 0;
+        }
+
+        .projects {
+          padding-top: 20px;
+          padding-bottom: 95px;
+        }
+
+        .skills {
+          margin-top: 100px;
+          padding-top: 20px;
+        }
+
+        .contact {
+          margin-top: 100px;
+          padding-top: 20px;
+          padding-bottom: 80px;
         }
 
         .project-grid {
@@ -605,6 +626,7 @@
         .social-links {
           gap: 15px;
           margin-top: 35px;
+          margin-bottom: 60px;
         }
 
         .modal-body {

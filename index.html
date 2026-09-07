@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   </head>
   <body onload="tryAutoplay()">
     <!-- Audio Overlay to capture first click -->
@@ -42,6 +43,8 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#certificates">Certificates</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
           <button id="music-toggle" class="music-btn" title="Play Music">
@@ -70,6 +73,7 @@
             yang kuat serta menciptakan solusi yang mampu menarik dan melibatkan
             audiens secara efektif.
           </p>
+          <a class="cv-button" href="#" aria-disabled="true">Download CV</a>
         </div>
         <div class="profile-container">
           <img src="profile (2).png" alt="Almuhidin" class="profile-img" />
@@ -150,6 +154,54 @@
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="experience container fade-in" id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-year">2025 - Present</span>
+          <div>
+            <h3>Universitas Amikom Yogyakarta</h3>
+            <p>S1 Informatika</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">2021 - 2024</span>
+          <div>
+            <h3>MAS 01 Darussalam Kepahiang</h3>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">2019 - 2021</span>
+          <div>
+            <h3>SMP Negeri 02 Lebong</h3>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">2012 - 2019</span>
+          <div>
+            <h3>SD Negeri 03 Lebong Atas</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="certificates container zoom-in" id="certificates">
+      <h2 class="section-title">Certificates</h2>
+      <div class="certificate-grid">
+        <article class="certificate-card" data-certificate="img/Sertifikat sebagai Best Concept dalam Event Hackthon Informatic Plus.pdf"><canvas class="pdf-thumb" data-pdf="img/Sertifikat sebagai Best Concept dalam Event Hackthon Informatic Plus.pdf"></canvas><h3>Best Concept Hackathon</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Membangun Aplikasi Gen AI dengan Microsoft Azure.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Membangun Aplikasi Gen AI</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Introduction to Financial Literacy.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Introduction to Financial Literacy</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/Sertifikat Ignition Muhammad Haidar Farras Albar R.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Ignition Certificate</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/Sertifikat Ignition M.Haidar Farras Albar Ramadani.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Ignition M. Haidar</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Belajar Penerapan Data Science dengan Microsoft Fabric.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Penerapan Data Science</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Belajar Membuat Front-End Web untuk Pemula.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Front-End Web Pemula</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Belajar Dasar Pemrograman Web.pdf.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Dasar Pemrograman Web</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/sertifikat Belajar Dasar Pemrograman JavaScript.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>Dasar Pemrograman JavaScript</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card" data-certificate="img/E-Sertifikat AMICTA Muhammad Haidar Farras Albar Ramadhani.pdf"><div class="pdf-thumb"><i class="fas fa-file-pdf"></i><span>PDF</span></div><h3>E-Sertifikat AMICTA</h3><span class="certificate-hint">Klik untuk membuka</span></article>
+        <article class="certificate-card certificate-image-card"><img src="img/sertif_event_online_cybersecurity.png" alt="Sertifikat event online cybersecurity" /><h3>Online Cybersecurity Event</h3><span class="certificate-hint">Klik untuk melihat</span></article>
       </div>
     </section>
 
@@ -237,6 +289,15 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="certificate-modal" id="certificateModal" aria-hidden="true">
+      <div class="certificate-modal-content">
+        <button class="certificate-modal-close" type="button" aria-label="Tutup sertifikat">&times;</button>
+        <div class="certificate-modal-pages"></div>
+        <img class="certificate-modal-img" src="" alt="" />
+        <p class="certificate-modal-title"></p>
       </div>
     </div>
 
@@ -390,6 +451,80 @@
           updateMusicUI(false);
         }
       });
+      const certificateModal = document.getElementById("certificateModal");
+       const certificateModalPages = document.querySelector(".certificate-modal-pages");
+       const certificateModalImg = document.querySelector(".certificate-modal-img");
+       const certificateModalTitle = document.querySelector(".certificate-modal-title");
+      const certificateModalClose = document.querySelector(".certificate-modal-close");
+
+      const renderCertificatePreviews = async () => {
+        for (const thumb of document.querySelectorAll(".pdf-thumb")) {
+          const card = thumb.closest(".certificate-card");
+          const pdf = await pdfjsLib.getDocument(card.dataset.certificate).promise;
+          const page = await pdf.getPage(1);
+          const viewport = page.getViewport({ scale: 1 });
+          const scale = thumb.clientWidth / viewport.width;
+          const scaledViewport = page.getViewport({ scale });
+          const canvas = document.createElement("canvas");
+          canvas.width = scaledViewport.width;
+          canvas.height = scaledViewport.height;
+          canvas.className = "pdf-preview-canvas";
+          await page.render({ canvasContext: canvas.getContext("2d"), viewport: scaledViewport }).promise;
+          thumb.replaceWith(canvas);
+        }
+      };
+
+      renderCertificatePreviews();
+
+      const renderCertificatePages = async (url) => {
+        certificateModalPages.innerHTML = "";
+        const pdf = await pdfjsLib.getDocument(url).promise;
+        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+          const page = await pdf.getPage(pageNumber);
+          const viewport = page.getViewport({ scale: 1 });
+          const scale = certificateModalPages.clientWidth / viewport.width;
+          const scaledViewport = page.getViewport({ scale });
+          const canvas = document.createElement("canvas");
+          canvas.width = scaledViewport.width;
+          canvas.height = scaledViewport.height;
+          await page.render({ canvasContext: canvas.getContext("2d"), viewport: scaledViewport }).promise;
+          certificateModalPages.appendChild(canvas);
+        }
+      };
+
+      document.querySelectorAll(".certificate-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const image = card.querySelector("img");
+          if (card.dataset.certificate) {
+            certificateModalImg.src = "";
+            certificateModalPages.classList.add("active");
+            renderCertificatePages(card.dataset.certificate);
+          } else {
+            certificateModalPages.classList.remove("active");
+            certificateModalImg.src = image.src;
+            certificateModalImg.alt = image.alt;
+          }
+          certificateModalTitle.innerText = card.querySelector("h3").innerText;
+          certificateModal.classList.add("active");
+          certificateModal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      const closeCertificateModal = () => {
+        certificateModal.classList.remove("active");
+        certificateModal.setAttribute("aria-hidden", "true");
+        certificateModalPages.innerHTML = "";
+        certificateModalPages.classList.remove("active");
+        certificateModalImg.src = "";
+        document.body.style.overflow = "auto";
+      };
+
+      certificateModalClose.addEventListener("click", closeCertificateModal);
+      certificateModal.addEventListener("click", (e) => {
+        if (e.target === certificateModal) closeCertificateModal();
+      });
+
       // Project Modal Logic
       const modal = document.getElementById("projectModal");
       const modalClose = document.querySelector(".modal-close");
@@ -472,9 +607,12 @@
 
       // Close on Escape key
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("active")) {
-          modal.classList.remove("active");
-          document.body.style.overflow = "auto";
+        if (e.key === "Escape") {
+          if (modal.classList.contains("active")) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+          if (certificateModal.classList.contains("active")) closeCertificateModal();
         }
       });
     </script>

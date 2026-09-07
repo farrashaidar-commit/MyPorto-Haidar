@@ -103,7 +103,7 @@
       .logo::before {
         content: "Portfolio";
         position: absolute;
-        top: -8px;
+         top: -14px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 12px;
@@ -352,6 +352,110 @@
           transform 0.6s ease;
       }
 
+      .cv-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 12px 22px;
+        border: 1px solid var(--primary);
+        border-radius: 6px;
+        color: var(--primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .cv-button:hover {
+        background: var(--primary);
+        color: var(--dark);
+      }
+
+      .timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        gap: 25px;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 25px;
+        padding: 25px;
+        border-left: 3px solid var(--primary);
+        background: rgba(17, 34, 64, 0.6);
+        border-radius: 0 15px 15px 0;
+      }
+
+      .timeline-year {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .timeline-item h3,
+      .certificate-card h3 {
+        color: var(--light);
+        margin-bottom: 10px;
+      }
+
+      .timeline-item p {
+        line-height: 1.7;
+      }
+
+      .certificates {
+        padding: 100px 0;
+      }
+
+      .certificate-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .certificate-card {
+        padding: 15px;
+        background: rgba(17, 34, 64, 0.6);
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .certificate-card img,
+      .pdf-thumb,
+      .pdf-preview-canvas {
+        display: block;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .pdf-preview-canvas {
+        background: white;
+      }
+
+      .pdf-thumb {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(145deg, #172d50, #0b1932);
+        color: var(--primary);
+      }
+
+      .pdf-thumb i {
+        font-size: 64px;
+      }
+
+      .pdf-thumb span {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .certificate-hint {
+        color: var(--gray);
+        font-size: 13px;
+      }
+
       /* Skills Section */
       .skills {
         padding: 100px 0;
@@ -499,7 +603,7 @@
         .logo::before {
           font-size: 9px;
           letter-spacing: 2px;
-          top: -6px;
+          top: -10px;
         }
 
         .nav-links {
@@ -523,7 +627,7 @@
         }
 
         .hero-text {
-          padding-top: 70px;
+          padding-top: 95px;
         }
 
         .hero-text h1 {
@@ -594,6 +698,31 @@
           grid-template-columns: 1fr;
         }
 
+        .certificate-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .experience,
+        .certificates {
+          padding: 75px 0;
+        }
+
+        .certificate-card img,
+        .pdf-thumb,
+        .pdf-preview-canvas {
+          height: 130px;
+        }
+
+        .certificate-card h3 {
+          font-size: 15px;
+        }
+
         .project-content {
           padding: 22px;
         }
@@ -627,6 +756,18 @@
           gap: 15px;
           margin-top: 35px;
           margin-bottom: 60px;
+        }
+
+        .certificate-modal {
+          padding: 15px;
+        }
+
+        .certificate-modal-content {
+          padding: 10px;
+        }
+
+        .certificate-modal-pages {
+          max-height: 72vh;
         }
 
         .modal-body {
@@ -727,6 +868,112 @@
         100% {
           box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
         }
+      }
+
+      .certificate-card {
+        cursor: zoom-in;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certificate-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(100, 255, 218, 0.15);
+      }
+
+      .certificate-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: rgba(2, 12, 27, 0.94);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .certificate-modal.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .certificate-modal-content {
+        position: relative;
+        width: min(92vw, 900px);
+        max-height: 92vh;
+        overflow: hidden;
+        padding: 18px;
+        border: 1px solid rgba(100, 255, 218, 0.5);
+        border-radius: 18px;
+        background: #112240;
+        box-shadow: 0 0 45px rgba(100, 255, 218, 0.2);
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+      }
+
+      .certificate-modal.active .certificate-modal-content {
+        transform: scale(1);
+      }
+
+      .certificate-modal-pages {
+        display: none;
+        max-height: 78vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .certificate-modal-pages.active {
+        display: block;
+      }
+
+      .certificate-modal-pages canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .certificate-modal-img {
+        display: none;
+        width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      .certificate-modal-img[src] {
+        display: block;
+      }
+
+      .certificate-modal-title {
+        margin: 14px 40px 0;
+        color: var(--light);
+        text-align: center;
+      }
+
+      .certificate-modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+        background: rgba(10, 25, 47, 0.9);
+        color: var(--light);
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .certificate-modal-close:hover {
+        background: var(--primary);
+        color: var(--dark);
       }
 
       /* Project Modal */

@@ -544,7 +544,7 @@
 
         .profile-container {
           width: min(75vw, 300px);
-          height: min(100vw, 400px);
+          height: min(75vw, 300px);
           margin-top: 55px;
         }
 

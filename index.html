@@ -95,7 +95,7 @@
               optimized performance.
             </p>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/haidarfarras-dev/Nusifyteam-Web-Agency.git" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> Source Code
               </a>
             </div>
@@ -594,10 +594,14 @@
         },
       };
 
+      document.querySelectorAll(".project-links a").forEach((link) => {
+        link.addEventListener("click", (e) => e.stopPropagation());
+      });
+
       projectCards.forEach((card) => {
         card.addEventListener("click", (e) => {
           // Prevent if clicking on links directly
-           if (e.target.closest(".project-links") || card.classList.contains("project-web")) return;
+            if (e.target.closest(".project-links")) return;
 
            const title = card.querySelector("h3").innerText;
           const img = card.querySelector("img").src;
@@ -621,11 +625,13 @@
               '<span class="tech-tag">Design</span><span class="tech-tag">Development</span>';
           }
 
-          // Update links
-          if (links[0]) modalLive.href = links[0].href;
-          if (links[1]) modalGithub.href = links[1].href;
+           const isWebProject = card.classList.contains("project-web");
+           modalLive.style.display = isWebProject ? "none" : "flex";
+           modalLive.href = links[0]?.href || "#";
+           modalGithub.style.display = isWebProject ? "flex" : "none";
+           modalGithub.href = isWebProject ? links[0]?.href || "#" : "#";
 
-          modal.classList.add("active");
+           modal.classList.add("active");
           document.body.style.overflow = "hidden"; // Prevent scrolling
         });
       });
